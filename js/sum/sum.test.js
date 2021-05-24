@@ -16,3 +16,18 @@ test('adds 0.1 + 0.2 to equal 0.3', () => {
     expect(sum(0.1, 0.2)).toBeCloseTo(0.3, 5);        
 });
 
+test('string is not allowed', () => {
+    expect(sum('a', NaN)).toBeFalsy();
+});
+
+test('string is not allowed', () => {
+    expect(sum(NaN, 8)).toBe(false);
+});
+
+test('string is not allowed', () => {
+    expect(sum(8, NaN)).toBe(false);
+});
+
+test('string is not allowed', () => {
+    expect(sum(8, 'a')).toBeFalsy();
+});
